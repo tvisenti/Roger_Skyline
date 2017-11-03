@@ -1,0 +1,1 @@
+skill -c tail -f /var/log/syslog
