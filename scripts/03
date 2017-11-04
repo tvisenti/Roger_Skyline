@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $# > 1 ]]; then
+	echo "Please juste one arg ... be nice :)"
+	exit 1
+fi
+
+if [[ ! -d $1 ]]; then
+	echo "It's not a directory"
+	exit 1
+fi
+
+ls -lhS $1
