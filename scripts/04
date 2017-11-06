@@ -1,1 +1,15 @@
 #!/bin/bash
+
+if [[ ! /tmp/crontab_tmp ]];
+	then
+	cp -R /etc/crontab /tmp/crontab_tmp
+elif [[ /etc/crontab != /tmp/crontab_tmp ]];
+	then
+	cp -R /etc/crontab /tmp/crontab_tmp
+	mail -s 'New crontab' root@localhost <<EOF
+	Crontab is changed
+EOF
+fi
+
+# crontab -e pour creer une tache
+# ajouter a la fin 0 0 * * * script_path
